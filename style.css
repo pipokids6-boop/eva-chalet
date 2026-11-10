@@ -1,0 +1,941 @@
+/* =========================
+   EVA CHALET - MAIN STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    color: #263526;
+    background-color: #f7f7f2;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+.navbar {
+    width: 100%;
+    min-height: 85px;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: transparent;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff8e9;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.logo-name span,
+.gold-text {
+    color: #e0b44c;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    min-width: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff8e9;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d6b56d;
+}
+
+.book-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 30px;
+    border: 2px solid #d6b56d;
+    border-radius: 50px;
+    color: #efdb25;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    background: transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.book-button:hover {
+    background: #d6b56d;
+    color: #10251b;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 120px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 40, 24, 0.45),
+            rgba(20, 40, 24, 0.45)
+        ),
+        url("imges/fa.jpeg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Smooth transition between hero and next section */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 120px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(244, 240, 231, 0) 0%,
+        rgba(244, 240, 231, 0.25) 65%,
+        #f4f0e7 100%
+    );
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.subtitle::before,
+.subtitle::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 2px;
+    background-color: #d6b56d;
+    flex-shrink: 0;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4.2vw, 58px);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 1100px;
+    margin: 0 auto 15px;
+    color: #fffaf0;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.65);
+}
+
+.description {
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px;
+    padding: 18px 42px;
+
+    background: #9C742E;
+    background-image: linear-gradient(
+        135deg,
+        #B58A3C 0%,
+        #8F6828 50%,
+        #A77D35 100%
+    );
+
+    opacity: 1;
+    color: #FFFFFF;
+    border: 1px solid #D0AE69;
+    border-radius: 100px;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 600;
+    text-decoration: none;
+
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+
+.main-button:hover {
+    background: #B58A3C;
+    background-image: linear-gradient(
+        135deg,
+        #C5A052 0%,
+        #A77D35 100%
+    );
+
+    opacity: 1;
+    color: #FFFFFF;
+    border-color: #E0C481;
+    transform: translateY(-3px);
+}
+/* =========================
+   CONTENT SECTIONS
+========================= */
+
+.about,
+.services,
+.contact {
+    width: 100%;
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: none;
+}
+
+.about {
+    background-color: #F5EBDD !important;
+    margin-top: -2px;
+    position: relative;
+}
+
+.services {
+    background-color: #d4c8b8 !important;
+}
+
+.pricing {
+    background-color: #F5EBDD !important;
+}
+
+.contact {
+    background-color: #d4c8b8!important;
+}
+
+.about h2,
+.services h2,
+.contact h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: #29452c;
+}
+
+.about p,
+.services p,
+.contact p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #626a60;
+    font-size: 18px;
+}
+
+/* =========================
+   SERVICES CARDS
+========================= */
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+
+.service-card {
+    background-color: #FAF5EC;
+    padding: 25px 20px;
+    border-radius: 14px;
+    flex: 1 1 220px;
+    min-width: 220px;
+    max-width: 300px;
+    box-shadow: 0 6px 18px rgba(73, 55, 40, 0.08);
+    border-bottom: 4px solid #9B7548;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(73, 55, 40, 0.15);
+}
+
+.service-card h3 {
+    color: #70502F;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #685747;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* =========================
+   PRICING SECTION
+========================= */
+
+.pricing {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #f5f5f0;
+    text-align: center;
+    direction: rtl;
+}
+
+
+/* =========================
+   LOGO DECORATION
+========================= */
+
+.logo-leaf {
+    display: block;
+    color: #a3b85c;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: -5px;
+}
+
+footer {
+    background: #202020;
+    color: #F5F0E6;
+    text-align: center;
+    padding: 24px 15px;
+}
+
+footer .copyright {
+    color: #D8D2C6;
+    font-size: 13px;
+    margin: 0 0 12px;
+}
+
+.developer-credit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #D8D2C6;
+}
+
+..developer-credit strong {
+    color: #D4AF6A;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.developer-credit small {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #E5C783;
+    margin-inline-start: 5px;
+}
+
+.developer-credit p {
+    margin: 0;
+    color: #BDB5A7;
+    font-size: 11px;
+}
+
+/* =========================
+   MEDIUM SCREENS
+========================= */
+
+@media (max-width: 1100px) {
+    .navbar {
+    padding: 18px 3%;
+    gap: 16px;
+    flex-wrap: nowrap;
+}
+
+.logo {
+    font-size: clamp(20px, 2.5vw, 30px);
+    flex-shrink: 0;
+}
+
+nav {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 20px);
+    white-space: nowrap;
+}
+
+nav a {
+    font-size: clamp(12px, 1.25vw, 16px);
+    white-space: nowrap;
+}
+
+.book-button {
+    padding: 10px 16px;
+    font-size: clamp(12px, 1.2vw, 15px);
+    gap: 5px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+    
+}
+
+/* =========================
+   SMALL SCREENS
+========================= */
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+        padding: 12px 8px;
+    }
+
+    .logo {
+        font-size: clamp(12px, 2.8vw, 19px);
+        letter-spacing: -1px;
+    }
+
+    nav {
+        flex: 1 1 auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: clamp(3px, 0.7vw, 6px);
+        min-width: 0;
+    }
+
+    nav a {
+        font-size: clamp(8px, 1.7vw, 11px);
+    }
+
+    .book-button {
+        padding: 6px 7px;
+        font-size: clamp(8px, 1.6vw, 10px);
+        gap: 2px;
+    }
+
+    .hero {
+        min-height: 500px;
+        min-height: 100svh;
+        padding: 100px 16px 70px;
+    }
+
+    .subtitle {
+        gap: 10px;
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .subtitle::before,
+    .subtitle::after {
+        width: 35px;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 7vw, 42px);
+    }
+
+    .description {
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .about,
+    .services,
+    .contact {
+        padding: 60px 16px;
+    }
+
+    .about h2,
+    .services h2,
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .about p,
+    .services p,
+    .contact p {
+        font-size: 16px;
+    }
+
+   
+}
+
+/* =========================
+   VERY NARROW SCREENS
+========================= */
+
+@media (max-width: 380px) {
+    .navbar {
+        gap: 3px;
+        padding: 10px 5px;
+    }
+
+    .logo {
+        font-size: 11px;
+        letter-spacing: -0.5px;
+    }
+
+    nav {
+        gap: 3px;
+    }
+
+    nav a {
+        font-size: 7px;
+    }
+
+    .book-button {
+        padding: 5px 4px;
+        font-size: 7px;
+        border-width: 1px;
+    }
+}
+
+.hero {
+    border: none;
+    margin-bottom: 0;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+    background: linear-gradient(
+        to bottom,
+        rgba(242, 232, 216, 0) 0%,
+        rgba(242, 232, 216, 0.15) 40%,
+        rgba(242, 232, 216, 0.6) 75%,
+        #f4e2c7 90%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 46px;
+    border: 2px solid #F5EBDD;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-top: 7px;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.scroll-down span {
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid #F5EBDD;
+    border-bottom: 2px solid #F5EBDD;
+    transform: rotate(45deg);
+    animation: scrollArrow 1.5s infinite;
+}
+
+@keyframes scrollArrow {
+    0%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(6px) rotate(45deg);
+    }
+}
+#about {
+    background: #F5EBDD !important;
+}
+
+#services {
+    background: #d4c8b8 !important;
+}
+
+#pricing {
+    background: #F5EBDD !important;
+}
+
+#contact {
+    background: #d4c8b8 !important;
+}
+
+/* =========================================
+   EVA CHALET — LUXURY PRICING SECTION
+========================================= */
+
+#pricing {
+    position: relative;
+    overflow: hidden;
+    padding: 85px 24px 75px;
+    direction: rtl;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at 10% 15%, rgba(167, 123, 63, 0.10), transparent 35%),
+        radial-gradient(ellipse at 90% 85%, rgba(111, 91, 58, 0.08), transparent 35%),
+        #f5ebdd !important;
+    color: #493b2c;
+}
+
+#pricing .pricing-brand {
+    max-width: 850px;
+    margin: 0 auto 48px;
+}
+
+#pricing .pricing-brand-name {
+    margin: 0;
+    color: #8a6b3e;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    direction: ltr;
+}
+
+#pricing .pricing-brand-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 17px auto 22px;
+    color: #b18b52;
+}
+
+#pricing .pricing-brand-divider::before,
+#pricing .pricing-brand-divider::after {
+    content: "";
+    width: 65px;
+    height: 1px;
+    background: #b18b52;
+}
+
+#pricing .pricing-brand-divider span {
+    font-size: 17px;
+}
+
+#pricing .pricing-brand h2 {
+    margin: 0 0 16px;
+    color: #493b2c;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 700;
+}
+
+#pricing .pricing-subtitle {
+    margin: 0;
+    color: #776753;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+#pricing .pricing-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto 40px;
+}
+
+#pricing .price-card {
+    min-width: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #fffaf3;
+    border: 1px solid #dfc9a7;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(75, 54, 31, 0.10);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pricing .price-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(75, 54, 31, 0.16);
+}
+
+#pricing .price-card-image {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background: #e5d6c0;
+}
+
+#pricing .price-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+#pricing .price-card:hover .price-card-image img {
+    transform: scale(1.04);
+}
+
+#pricing .price-card-content {
+    padding: 28px 20px 32px;
+}
+
+#pricing .price-card h3 {
+    margin: 0 0 12px;
+    color: #60452d;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#pricing .price-days {
+    min-height: 30px;
+    margin: 0 0 22px;
+    color: #84735e;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+#pricing .price-amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 9px;
+    color: #a77b3f;
+}
+
+#pricing .price-amount span {
+    font-family: Georgia, serif;
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+#pricing .price-amount small {
+    color: #786348;
+    font-size: 17px;
+}
+
+#pricing .booking-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    background: rgba(255, 250, 243, 0.75);
+    border: 1px solid #dfc9a7;
+    border-radius: 16px;
+}
+
+#pricing .booking-detail {
+    padding: 8px 10px;
+}
+
+#pricing .detail-icon {
+    display: block;
+    margin-bottom: 9px;
+    color: #a77b3f;
+    font-size: 28px;
+}
+
+#pricing .booking-detail h3 {
+    margin: 0 0 8px;
+    color: #60452d;
+    font-size: 18px;
+}
+
+#pricing .booking-detail p {
+    margin: 0;
+    color: #786348;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+#pricing .booking-detail .deposit-amount {
+    color: #a77b3f;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#pricing .deposit-note {
+    margin: 20px auto 25px;
+    color: #786b59;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+#pricing .pricing-booking-button {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 15px 35px;
+    background: #8b6a3e;
+    border: 1px solid #8b6a3e;
+    border-radius: 8px;
+    color: #fffaf3;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+#pricing .pricing-booking-button:hover {
+    background: #6d512f;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+    #pricing {
+        padding: 60px 16px 50px;
+    }
+
+    #pricing .pricing-brand {
+        margin-bottom: 32px;
+    }
+
+    #pricing .pricing-subtitle {
+        font-size: 15px;
+    }
+
+    #pricing .pricing-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        max-width: 430px;
+    }
+
+    #pricing .price-card-image {
+        height: 230px;
+    }
+
+    #pricing .booking-details {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        max-width: 430px;
+        padding: 18px;
+    }
+
+    #pricing .booking-detail {
+        padding: 12px 8px;
+        border-bottom: 1px solid #e6d7c2;
+    }
+
+    #pricing .booking-detail:last-child {
+        border-bottom: none;
+    }
+
+    #pricing .price-amount span {
+        font-size: 50px;
+    }
+}
+/* IMPORTANT BOOKING NOTICE */
+#pricing .booking-notice {
+    max-width: 1050px;
+    margin: 0 auto 30px;
+    padding: 25px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #fff8ed, #ead4b2);
+    border: 2px solid #b18b52;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(75, 54, 31, 0.12);
+}
+
+#pricing .booking-notice .notice-icon {
+    display: block;
+    margin-bottom: 5px;
+    color: #a77b3f;
+    font-size: 25px;
+}
+
+#pricing .booking-notice h3 {
+    margin: 0 0 8px;
+    color: #765126;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#pricing .booking-notice p {
+    margin: 0;
+    color: #493b2c;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 800;
+    line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+    #pricing .booking-notice {
+        padding: 20px 12px;
+    }
+
+    #pricing .booking-notice h3 {
+        font-size: 21px;
+    }
+}
